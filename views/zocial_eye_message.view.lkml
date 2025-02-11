@@ -785,7 +785,7 @@ view: zocial_eye_message {
     type: time
     timeframes: [date, week, month, quarter, year]
     datatype: date
-    sql: ${TABLE}.post_time_human ;;
+    sql: DATE(${TABLE}.post_time_human);;
   }
 
   dimension_group: date {
@@ -793,7 +793,7 @@ view: zocial_eye_message {
     type: time
     timeframes: [date, week, month, quarter, year]
     datatype: date
-    sql: PARSE_DATE('%Y-%m-%d', SUBSTR(${TABLE}.post_time_human, 1, 10)) ;;
+    sql: ${post_time_human_date} ;;
   }
 
   dimension: date {
