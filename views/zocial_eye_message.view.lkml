@@ -186,7 +186,16 @@ view: zocial_eye_message {
       WHEN ${zocial_eye_message.text} LIKE ANY ("%VichyDercos%", "%DercosTH%", "%VichyTH%", "%ScalpandHairAcademy%", "%meVSdandruff%", "%VoicesOfVichy%", "%VichyDercosxPondPhuwin%", "%VichyDercosxJamesSu%", "%VichyDercosxFirstKhaotung%", "%VichyDercosxEarthMix%", "%VichyDercosxTayTawan%", "%DensiSolutions%", "%DercosDensiSolutions%", "%Vichy Dercos%") THEN "VICHY DERCOS"
       WHEN ${zocial_eye_message.text} LIKE ANY ("%Nizoral%", "%NizoralDermaDaily%", "%ทรงพลังแต่อ่อนโยน%", "%ScalpDermaCenter%") THEN "NIZORAL"
       WHEN ${zocial_eye_message.text} LIKE ANY ("%switchselsunblue%", "%เปลี่ยนมาใช้เซลซั่นบลู%","%จบรังแคซ้ำซากใน2สัปดาห์%","% selsunblue%","%เซลซั่นบลู%","%ฝาแดง%","%แชมพูเซลซั่น%","%selsun%","%เซลซั่นแชมพู%") THEN "Selsun Blue"
-      WHEN ${zocial_eye_message.text} LIKE ANY ("%garnier%","%ล้างคสอเกลี้ยง%","%คลีนซิ่งที่ถูกต้อง%","%การ์นิเย่ไมเซล่า%","%เช็ดเครื่องสำอางหมดจด%","%ไม่แสบผิว%","%#GarnierThailand%","%#ไมเซล่าการ์นิเย่%","%#หน้าไหนก็ชนะ%","%#คลีนซิ่งการ์นิเย่%","%#GarnierMoment%", "%จุดด่างดำลดลง%", "%ขจัดสิ่งสกปรกหมดจด%", "%มาสคาร่ากันน้ำ%","%คลีนซิ่ง BHA สำหรับคนเป็นสิว%","%การ์นิเย่ลดสิว%", "%คลีนซิ่งสีฟ้ากานิเย่%","%การดูแลผิวหน้ากับคลีนซิ่ง%","%วิธีเลือกคลีนซิ่งสำหรับสิว%","%แผ่นเดียวเอาอยู่%","%ดูดเมคอัพออกหมด%", "%อายไลเนอร์กันน้ำ%","%มาสคาร่ากันน้ำ%") THEN 'GARNIER'
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%garnier%","%ล้างคสอเกลี้ยง%","%คลีนซิ่งที่ถูกต้อง%","%การ์นิเย่ไมเซล่า%","%เช็ดเครื่องสำอางหมดจด%","%ไม่แสบผิว%","%#GarnierThailand%","%#ไมเซล่าการ์นิเย่%","%#หน้าไหนก็ชนะ%","%#คลีนซิ่งการ์นิเย่%","%#GarnierMoment%", "%จุดด่างดำลดลง%", "%ขจัดสิ่งสกปรกหมดจด%", "%มาสคาร่ากันน้ำ%","%คลีนซิ่ง BHA สำหรับคนเป็นสิว%","%การ์นิเย่ลดสิว%", "%คลีนซิ่งสีฟ้ากานิเย่%","%การดูแลผิวหน้ากับคลีนซิ่ง%","%วิธีเลือกคลีนซิ่งสำหรับสิว%","%แผ่นเดียวเอาอยู่%","%ดูดเมคอัพออกหมด%", "%อายไลเนอร์กันน้ำ%","%มาสคาร่ากันน้ำ%") AND ${zocial_eye_message.text} LIKE ANY (
+        "%GARNIER%",
+        "%Garnier%",
+        "%garnier%",
+        "%GANIER%",
+        "%Ganier%",
+        "%ganier%",
+        "%การ์นิเย%",
+        "%กานิเย%"
+      ) THEN 'GARNIER'
       WHEN ${zocial_eye_message.text} LIKE ANY (
         "%#NIVEA%",
         "%#niveaไมเซล่าลดสิว%",
@@ -232,6 +241,15 @@ view: zocial_eye_message {
         "%ผิวแพ้ง่ายใช้ได้%",
         "%personal color%",
         "%เช็ดเดียวก็สะอาด%"
+      )  AND ${zocial_eye_message.text} LIKE ANY (
+        "%NIVEA%",
+        "%Nivea%",
+        "%nivea%",
+        "%NEVIA%",
+        "%Nevia%",
+        "%nevia%",
+        "%นีเวีย%",
+        "%นิเวีย%"
       ) THEN 'NIVEA'
       WHEN ${zocial_eye_message.text} LIKE ANY (
         "%#บิเฟสต้า%",
@@ -260,6 +278,18 @@ view: zocial_eye_message {
         "%เห็นผลพร้อมกล้องยูวี%",
         "%ผลิตภัณฑ์คลีนซิ่งเพื่อผิวใส%",
         "%เช็ดหน้าให้เกลี้ยงเกลี้ยง%"
+      ) AND ${zocial_eye_message.text} LIKE ANY (
+        "%BIFESTA%",
+        "%Bifesta%",
+        "%bifesta%",
+        "%บิเฟสต้า%",
+        "%บีเฟสต้า%",
+        "%บิเฟซต้า%",
+        "%บีเฟซต้า%",
+        "%บิเฟสตา%",
+        "%บีเฟสตา%",
+        "%บิเฟซตา%",
+        "%บีเฟซตา%"
       ) THEN 'Bifesta'
     END ;;
   }
