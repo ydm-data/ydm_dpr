@@ -1,4 +1,5 @@
 # The name of this view in Looker is "Zocial Eye Message"
+
 view: zocial_eye_message {
 
   sql_table_name: `rda_analytics.Zocial_eye_message` ;;
@@ -185,6 +186,111 @@ view: zocial_eye_message {
       WHEN ${zocial_eye_message.text} LIKE ANY ("%VichyDercos%", "%DercosTH%", "%VichyTH%", "%ScalpandHairAcademy%", "%meVSdandruff%", "%VoicesOfVichy%", "%VichyDercosxPondPhuwin%", "%VichyDercosxJamesSu%", "%VichyDercosxFirstKhaotung%", "%VichyDercosxEarthMix%", "%VichyDercosxTayTawan%", "%DensiSolutions%", "%DercosDensiSolutions%", "%Vichy Dercos%") THEN "VICHY DERCOS"
       WHEN ${zocial_eye_message.text} LIKE ANY ("%Nizoral%", "%NizoralDermaDaily%", "%ทรงพลังแต่อ่อนโยน%", "%ScalpDermaCenter%") THEN "NIZORAL"
       WHEN ${zocial_eye_message.text} LIKE ANY ("%switchselsunblue%", "%เปลี่ยนมาใช้เซลซั่นบลู%","%จบรังแคซ้ำซากใน2สัปดาห์%","% selsunblue%","%เซลซั่นบลู%","%ฝาแดง%","%แชมพูเซลซั่น%","%selsun%","%เซลซั่นแชมพู%") THEN "Selsun Blue"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%garnier%","%ล้างคสอเกลี้ยง%","%คลีนซิ่งที่ถูกต้อง%","%การ์นิเย่ไมเซล่า%","%เช็ดเครื่องสำอางหมดจด%","%ไม่แสบผิว%","%#GarnierThailand%","%#ไมเซล่าการ์นิเย่%","%#หน้าไหนก็ชนะ%","%#คลีนซิ่งการ์นิเย่%","%#GarnierMoment%", "%จุดด่างดำลดลง%", "%ขจัดสิ่งสกปรกหมดจด%", "%มาสคาร่ากันน้ำ%","%คลีนซิ่ง BHA สำหรับคนเป็นสิว%","%การ์นิเย่ลดสิว%", "%คลีนซิ่งสีฟ้ากานิเย่%","%การดูแลผิวหน้ากับคลีนซิ่ง%","%วิธีเลือกคลีนซิ่งสำหรับสิว%","%แผ่นเดียวเอาอยู่%","%ดูดเมคอัพออกหมด%", "%อายไลเนอร์กันน้ำ%","%มาสคาร่ากันน้ำ%") AND ${zocial_eye_message.text} LIKE ANY (
+        "%GARNIER%",
+        "%Garnier%",
+        "%garnier%",
+        "%GANIER%",
+        "%Ganier%",
+        "%ganier%",
+        "%การ์นิเย%",
+        "%กานิเย%"
+      ) THEN 'GARNIER'
+      WHEN ${zocial_eye_message.text} LIKE ANY (
+        "%#NIVEA%",
+        "%#niveaไมเซล่าลดสิว%",
+        "%#ไมเซล่าnivea%",
+        "%#คลีนซิ่งนีเวีย%",
+        "%#คลีนซิ่งนีเวียสูตรเขียว%",
+        "%#พักหน้า%",
+        "%#NIVEAAcneCareMicellar%",
+        "%#ไมเซล่าขายดีอันดับ1ของนีเวีย%",
+        "%ไมเซล่าขวดม่วง%",
+        "%ผิวหายใจได้%",
+        "%#NIVEATHAILAND%",
+        "%#NIVEASUPERBRANDDAY%",
+        "%#นีเวียช้อปมันไม่มีสะดุด%",
+        "%#เช็ดเครื่องสําอาง%",
+        "%#makeupremover%",
+        "%#ไมเซล่าวอเตอร์%",
+        "%ลดการอุดตัน%",
+        "%ลดการเกิดสิว%",
+        "%อ่อนโยนต่อผิว%",
+        "%ปาดเดียวอยู่%",
+        "%คลีนซิ่งดูดเมคอัพแบบแม่เหล็ก%",
+        "%เช็ดเมคอัพออกเกลี้ยง%",
+        "%เติมออกซิเจนให้ผิว%",
+        "%ไม่แสบผิว%",
+        "%#นีเวีย%",
+        "%คลีนซิ่งที่ช่วยจัดการปัญหาสิว%",
+        "%คลีนซิ่งนีเวียลดสิว%",
+        "%ไมเซล่าวอเตอร์นีเวีย%",
+        "%วิธีลดสิวด้วยคลีนซิ่ง%",
+        "%รีวิวคลีนซิ่งลดสิว%",
+        "%คลีนซิ่งเพื่อคนแต่งหน้า%",
+        "%#NIVEAAcneCareMicellar%",
+        "%#tiktoklooks%",
+        "%#เมคอัพเปลี่ยนลุค%",
+        "%#สอนแต่งหน้า%",
+        "%#แต่งหน้า%",
+        "%เช็ดเดียวปิดจ๊อบสิว%",
+        "%อัพผิวสวย%",
+        "%เช็ดเมคอัพหมดจด%",
+        "%ออกซิเจนบูสต์เทคโนโลยี%",
+        "%ไม่แห้งตึง ไม่มันเยิ้ม%",
+        "%ผิวแพ้ง่ายใช้ได้%",
+        "%personal color%",
+        "%เช็ดเดียวก็สะอาด%"
+      )  AND ${zocial_eye_message.text} LIKE ANY (
+        "%NIVEA%",
+        "%Nivea%",
+        "%nivea%",
+        "%NEVIA%",
+        "%Nevia%",
+        "%nevia%",
+        "%นีเวีย%",
+        "%นิเวีย%"
+      ) THEN 'NIVEA'
+      WHEN ${zocial_eye_message.text} LIKE ANY (
+        "%#บิเฟสต้า%",
+        "%#PerfectGlow%",
+        "%#เช็ดปุ๊ปโกลว์ปั๊ป%",
+        "%ล็อคความชุ่มชื่น%",
+        "%ผสมสารสกัดจากส้มยูซุญี่ปุ่นและวิตามินซี%",
+        "%เมคอัพติดทน%",
+        "%เมคอัพกันน้ำ%",
+        "%Bifesta Micellar Cleasing Water Perfect Glow%",
+        "%คลีนซิ่งที่ต้องตุนติดบ้านไว้ตลอด%",
+        "%#bifestathailand%",
+        "%#bifesta%",
+        "%คลีนซิ่งบีเฟสต้าสูตรสีเขียว%",
+        "%#คลีนซิ่งบีเฟสต้า%",
+        "%คลีนซิ่งบีเฟสต้าสูตรแอคเน่แคร์สำหรับผิวแพ้ง่าย%",
+        "%รีวิวสูตรคลีนซิ่ง Bifesta%",
+        "%คลีนเมคอัพก่อนนอน%",
+        "%#ติดฝนรีวิว%",
+        "%#tiktokคนบันเทิง%",
+        "%สูตรสีเขียวใช้ดีมาก%",
+        "%คลีนซิ่งไมเซล่าแบบน้ำ%",
+        "%#ไมเซล่าเคลนซิ่งวอเตอร์%",
+        "%รีวิวบิเฟสต้าไมเซล่า%",
+        "%ทริคเช็ดกันแดด%",
+        "%เห็นผลพร้อมกล้องยูวี%",
+        "%ผลิตภัณฑ์คลีนซิ่งเพื่อผิวใส%",
+        "%เช็ดหน้าให้เกลี้ยงเกลี้ยง%"
+      ) AND ${zocial_eye_message.text} LIKE ANY (
+        "%BIFESTA%",
+        "%Bifesta%",
+        "%bifesta%",
+        "%บิเฟสต้า%",
+        "%บีเฟสต้า%",
+        "%บิเฟซต้า%",
+        "%บีเฟซต้า%",
+        "%บิเฟสตา%",
+        "%บีเฟสตา%",
+        "%บิเฟซตา%",
+        "%บีเฟซตา%"
+      ) THEN 'Bifesta'
     END ;;
   }
 
