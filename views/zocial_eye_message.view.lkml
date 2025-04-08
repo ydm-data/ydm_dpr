@@ -874,7 +874,7 @@ view: zocial_eye_message {
     type: string
     sql: ${TABLE}.permalink ;;
     description: "URL of social media post, for exploer KOL post on social media"
-    html: <iframe width='320' height='440' src='https://www.ydmthailand.com/'></iframe> ;;
+    # html: <iframe width='320' height='440' src='https://www.ydmthailand.com/'></iframe> ;;
   }
 
   dimension: photos {
