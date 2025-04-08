@@ -889,9 +889,9 @@ view: zocial_eye_message {
 
   dimension_group: post_time_human {
     type: time
-    timeframes: [minute,date, week, month, quarter, year]
-    datatype: date
-    sql: FORMAT_TIMESTAMP('%F %T', TIMESTAMP(DATETIME(TIMESTAMP_ADD(${TABLE}.post_time_human, INTERVAL 7 HOUR)))) ;;
+    timeframes: [raw,second ,minute, minute2,date, week, month, quarter, year]
+    datatype: datetime
+    sql: DATETIME(TIMESTAMP(${TABLE}.post_time_human), 'Asia/Bangkok') ;;
   }
 
   dimension_group: date {
@@ -927,9 +927,10 @@ view: zocial_eye_message {
     sql:  PARSE_DATE('%Y-%m-%d', SUBSTR(${TABLE}.post_time_human, 1, 10)) ;;
   }
 
-  dimension: post_time_unix {
-    type: number
-    sql: ${TABLE}.post_time_unix ;;
+  dimension_group: post_time_unix {
+    type: time
+    timeframes: [minute, date, week, month, quarter, year]
+    sql: DATE(TIMESTAMP_SECONDS(${TABLE}.post_time_unix),'Asia/Bangkok') ;;
   }
 
   dimension: poster_label_audience_size {
