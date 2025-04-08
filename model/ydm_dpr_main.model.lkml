@@ -2,7 +2,7 @@ connection: "rda_analytics"
 include: "/views/*.view.lkml"
 
 datagroup: ydm_kol_default_datagroup {
-  interval_trigger: "12 hours"
+  # interval_trigger: "12 hours"
   max_cache_age: "24 hour"
 }
 
@@ -15,8 +15,6 @@ persist_with: ydm_kol_default_datagroup
 
 explore: zocial_eye_message {
   required_access_grants: [project_area]
-
-  sql_always_where: ${zocial_eye_message.user_name} NOT IN ("apex.laser", "Samsung" ,"Coca-Cola", "China Xinhua News", "Netflix", "McDonalds", "Huawei Mobile", "LG Global", "HM", "OREO", "Lazada", "ZARA", "Shopee", "ASUS", "Nissan", "Khaosod - ข่าวสด","Thairath - ไทยรัฐออนไลน์","TNN","Dermalogica Thailand", "Wochenblitz", "tanapornclinic", "Marketeer Omline", "eventpassapp", "SEPHORA", "Watsons", "reuters", "gmmgrammy", "kbsworldtv", "mnctvofficialid", "ช่อง one31", "khaosodonline", "ทีวีพูล TVPool", "Thai PBS", "one31.official", "GMMTV", "สยามนิวส์", "Sanook - สนุกดอทคอม")AND ${zocial_eye_message.campaign_name} IN ("New Hyundai Listening","NIVEA MEN", "NIVEA Luminious630", "NIVEA for KOLs Dashboard", "Neutrogena", "samsung", "new_samsung","Sunbites","Clean & Clear", "selsun blue", "SAMSUNG A Series", "Nivea Extra Bright DEo","Nivea DEO", "Bifesta - KOL", "Buried Heart / Hyper Knife / Gannibal ss2") ;;
 
   join: dpr_kol_budget {
     type: left_outer
