@@ -889,7 +889,7 @@ view: zocial_eye_message {
 
   dimension_group: post_time_human {
     type: time
-    timeframes: [date, week, month, quarter, year]
+    timeframes: [minute,date, week, month, quarter, year]
     datatype: date
     sql: DATE(${TABLE}.post_time_human);;
   }
