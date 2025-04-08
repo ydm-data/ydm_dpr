@@ -891,7 +891,7 @@ view: zocial_eye_message {
     type: time
     timeframes: [minute,date, week, month, quarter, year]
     datatype: date
-    sql: DATE(${TABLE}.post_time_human);;
+    sql: FORMAT_TIMESTAMP('%F %T', TIMESTAMP(DATETIME(TIMESTAMP_ADD(${TABLE}.post_time_human, INTERVAL 7 HOUR)))) ;;
   }
 
   dimension_group: date {
