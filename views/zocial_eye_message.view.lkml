@@ -291,6 +291,11 @@ view: zocial_eye_message {
         "%บิเฟซตา%",
         "%บีเฟซตา%"
       ) THEN 'Bifesta'
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%#TaobaoThailand%", "%#GetTaobaoGetmore%", "%#Taobao1212%", "%#Taobaofreshfinds%") THEN "Taobao"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%#TemuThailand%", "%#temuhaul%", "%#temustyle%", "%#temufinds%") THEN "Temu"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%#Sheinstyleth%", "%#SHEINblackfriday%", "%#sheinbigsalesday%", "%#SHEIN1212sale%", "%#SHEINGoodFinds%", "%#SHEINforAll%", "%#sheinth%", "%#sheintrendsth%") THEN "Shein"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%#shopeeแฟชั่นบิวตี้%", "%#ShopeeTH%",) THEN "Shopee"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%#LazadaPayday%", "%#ดีลช้อปทุกวันยันสิ้นเดือน", "%#จะเลิกเปรียบเทียบกี่โมง%", "%#lazadath%") THEN "Lazada"
     END ;;
   }
 
