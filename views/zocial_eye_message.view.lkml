@@ -313,7 +313,7 @@ view: zocial_eye_message {
       WHEN ${zocial_eye_message.text} LIKE ANY ("%#herhynessกันแดดของหลิง%") THEN "HER HYNESS UV ADAPT WATERY SUNSCREEN SPF50+ PA++++"
       WHEN ${zocial_eye_message.text} LIKE ANY ("%#herhynessno1sunscreen%") THEN "HER HYNESS HY’4 WATER SUNSCREEN SPF50+ PA++++"
       WHEN ${zocial_eye_message.text} LIKE ANY ("%#SunUltra100ที่สุดกันแดดสำหรับผิวทำเลเซอร์%", "%#EucerinThailand%","%#EucerinSunUltra100%", "%#กันแดดหลังทำหัตถการ%") THEN "Eucerin"
-      WHEN ${zocial_eye_message.text} LIKE ANY ("%กันแดด%นูโทรจีนา%","%กันแดด%นูโทจีนา%","%กันแดด%Neutrogena%",) THEN "Neutrogena"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%กันแดด%นูโทรจีนา%","%กันแดด%นูโทจีนา%","%กันแดด%Neutroฃgena%") THEN "Neutrogena"
     ELSE Null
     END;;
   }
