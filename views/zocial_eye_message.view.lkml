@@ -308,6 +308,12 @@ view: zocial_eye_message {
       WHEN ${zocial_eye_message.text} LIKE ANY ("%#เซนกะซิก้าเฟรนลี่ดี๊ดีต่อผิว%", "%#SENKAPerfectWhipLowpHCica%") THEN "SENKA Perfect Whip Low pH Calming Cica (สีเขียวเข้ม)"
       WHEN ${zocial_eye_message.text} LIKE ANY ("%#SENKAPerfectWhipAcneCare%") THEN "SENKA Perfect Whip Acne Care (สีเขียวอ่อน)"
       WHEN ${zocial_eye_message.text} LIKE ANY ("%#SENKAPerfectWhip%") THEN "SENKA Perfect Whip (สีฟ้า)"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%กันแดด%ลาโรช%ม่วง","%#กันแดดลดฝ้ากู้ผิวใส%","%#กันแดดanthelios%","%#กันแดดหล่อมาก%","%#กันแดดอันดับ1ในเอเชีย%") THEN "La Roche-Posay Anthelios UVMune 400 Anti-Dark Spots Fluid"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%#ANESSAUltimatePrevention%","%#ANESSABeautySuncare%","%#ANESSAThailand​%") THEN "Anessa"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%#herhynessกันแดดของหลิง%") THEN "HER HYNESS UV ADAPT WATERY SUNSCREEN SPF50+ PA++++"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%#herhynessno1sunscreen%") THEN "HER HYNESS HY’4 WATER SUNSCREEN SPF50+ PA++++"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%#SunUltra100ที่สุดกันแดดสำหรับผิวทำเลเซอร์%", "%#EucerinThailand%","%#EucerinSunUltra100%", "%#กันแดดหลังทำหัตถการ%") THEN "Eucerin"
+      WHEN ${zocial_eye_message.text} LIKE ANY ("%กันแดด%นูโทรจีนา%","%กันแดด%นูโทจีนา%","%กันแดด%Neutrogena%",) THEN "Neutrogena"
     ELSE Null
     END;;
   }
