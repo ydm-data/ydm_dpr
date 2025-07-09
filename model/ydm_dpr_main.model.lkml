@@ -8,7 +8,7 @@ datagroup: ydm_kol_default_datagroup {
 
 access_grant: project_area {
   user_attribute: project_area
-  allowed_values: ["kol", "social", "all"]
+  allowed_values: ["kol", "social", "all", "samsung"]
 }
 
 persist_with: ydm_kol_default_datagroup
