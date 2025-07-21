@@ -345,8 +345,7 @@ view: zocial_eye_message {
           WHEN ${zocial_eye_message.text} LIKE ANY ("%Gatsby%") THEN "Brand KWs"
 
         WHEN ${zocial_eye_message.text} LIKE ANY (
-        "%schwarzkopf taft%",
-        "%schwarzkopf got2b%"
+        "%schwarzkopf%"
         ) THEN "Competitors KWs"
 
         ELSE NULL
