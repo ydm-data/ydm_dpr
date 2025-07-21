@@ -349,17 +349,6 @@ view: zocial_eye_message {
         "%schwarzkopf got2b%"
         ) THEN "Competitors KWs"
 
-        WHEN ${zocial_eye_message.text} LIKE ANY (
-        "%เช็ทผม%",
-        "%เซ็ทผมผู้ชาย%",
-        "%เซ็ตผม%",
-        "%เซทผม%",
-        "%จัดแต่งทรงผม%",
-        "%ไอเท็มผู้ชาย%",
-        "%ทรงผมผู้ชาย%",
-        "%ทรงผมทอม%"
-        ) THEN "Generic KWs"
-
         ELSE NULL
         END ;;
     }
@@ -399,6 +388,17 @@ view: zocial_eye_message {
         "%สเปรย์ล็อคผมผู้ชาย%",
         "%สเปรย์ล็อกผม%"
         ) THEN "Spray"
+
+        WHEN ${zocial_eye_message.text} LIKE ANY (
+        "%เช็ทผม%",
+        "%เซ็ทผมผู้ชาย%",
+        "%เซ็ตผม%",
+        "%เซทผม%",
+        "%จัดแต่งทรงผม%",
+        "%ไอเท็มผู้ชาย%",
+        "%ทรงผมผู้ชาย%",
+        "%ทรงผมทอม%"
+        ) THEN "Generic KWs"
 
         ELSE NULL
         END ;;
