@@ -338,62 +338,71 @@ view: zocial_eye_message {
     END;;
   }
 
-  dimension: batsby_keyword_label {
-    label: "Gatsby Keyword Label"
-    type: string
-    sql: CASE
+    dimension: gatsby_brand_keyword_label {
+      label: "Gatsby Brand Keyword Label"
+      type: string
+      sql: CASE
           WHEN ${zocial_eye_message.text} LIKE ANY ("%Gatsby%") THEN "Brand KWs"
 
-      WHEN ${zocial_eye_message.text} LIKE ANY (
-      "%schwarzkopf taft%",
-      "%schwarzkopf got2b%"
-      ) THEN "Competitors KWs"
+        WHEN ${zocial_eye_message.text} LIKE ANY (
+        "%schwarzkopf taft%",
+        "%schwarzkopf got2b%"
+        ) THEN "Competitors KWs"
 
-      WHEN ${zocial_eye_message.text} LIKE ANY (
-      "%เช็ทผม%",
-      "%เซ็ทผมผู้ชาย%",
-      "%เซ็ตผม%",
-      "%เซทผม%",
-      "%จัดแต่งทรงผม%",
-      "%ไอเท็มผู้ชาย%",
-      "%ทรงผมผู้ชาย%",
-      "%ทรงผมทอม%"
-      ) THEN "Generic KWs"
+        WHEN ${zocial_eye_message.text} LIKE ANY (
+        "%เช็ทผม%",
+        "%เซ็ทผมผู้ชาย%",
+        "%เซ็ตผม%",
+        "%เซทผม%",
+        "%จัดแต่งทรงผม%",
+        "%ไอเท็มผู้ชาย%",
+        "%ทรงผมผู้ชาย%",
+        "%ทรงผมทอม%"
+        ) THEN "Generic KWs"
 
-      WHEN ${zocial_eye_message.text} LIKE ANY (
-      "%แป้งเซ็ทผม%",
-      "%แป้งเซทผม%",
-      "%แป้งยกโคนผม%",
-      "%แป้งเซ็ทโคนผม%",
-      "%แป้งโรยโคนผม%",
-      "%แป้งเซ็ทผมผู้ชาย%"
-      ) THEN "แป้ง"
+        ELSE NULL
+        END ;;
+    }
 
-      WHEN ${zocial_eye_message.text} LIKE ANY (
-      "%แว็กซ์ผมผู้ชาย%",
-      "%แว็กซ์เซตผม%",
-      "%แว็กซ์เซ็ทผมลดสิว%",
-      "%แว็กซ์เซ็ทผมแบบแป้ง%",
-      "%แว๊กซ์ผมสูตรลดสิว%",
-      "%แว๊กเซ็ตผม%",
-      "%แว๊กเซ็ทผม%",
-      "%รีวิวแว็กซ์%",
-      "%แว็กซ์จัดแต่งทรงผม%"
-      ) THEN "wax"
+    dimension: gatsby_product_keyword_label {
+      label: "Gatsby Product Keyword Label"
+      type: string
+      sql: CASE
 
-      WHEN ${zocial_eye_message.text} LIKE ANY (
-      "%สเปรย์เพิ่มวอลลุ่ม%",
-      "%สเปรย์ฉีดผม%",
-      "%สเปรย์เซ็ตผม%",
-      "%สเปรย์เซ็ตผมผู้ชาย%",
-      "%สเปรย์ยกโคนผม%",
-      "%สเปรย์ล็อคผมผู้ชาย%",
-      "%สเปรย์ล็อกผม%"
-      ) THEN "Spray"
+              WHEN ${zocial_eye_message.text} LIKE ANY (
+              "%แป้งเซ็ทผม%",
+              "%แป้งเซทผม%",
+              "%แป้งยกโคนผม%",
+              "%แป้งเซ็ทโคนผม%",
+              "%แป้งโรยโคนผม%",
+              "%แป้งเซ็ทผมผู้ชาย%"
+              ) THEN "แป้ง"
 
-      ELSE NULL
-      END ;;
-  }
+        WHEN ${zocial_eye_message.text} LIKE ANY (
+        "%แว็กซ์ผมผู้ชาย%",
+        "%แว็กซ์เซตผม%",
+        "%แว็กซ์เซ็ทผมลดสิว%",
+        "%แว็กซ์เซ็ทผมแบบแป้ง%",
+        "%แว๊กซ์ผมสูตรลดสิว%",
+        "%แว๊กเซ็ตผม%",
+        "%แว๊กเซ็ทผม%",
+        "%รีวิวแว็กซ์%",
+        "%แว็กซ์จัดแต่งทรงผม%"
+        ) THEN "wax"
+
+        WHEN ${zocial_eye_message.text} LIKE ANY (
+        "%สเปรย์เพิ่มวอลลุ่ม%",
+        "%สเปรย์ฉีดผม%",
+        "%สเปรย์เซ็ตผม%",
+        "%สเปรย์เซ็ตผมผู้ชาย%",
+        "%สเปรย์ยกโคนผม%",
+        "%สเปรย์ล็อคผมผู้ชาย%",
+        "%สเปรย์ล็อกผม%"
+        ) THEN "Spray"
+
+        ELSE NULL
+        END ;;
+    }
 
   dimension: post_comment_fillter {
     type: string
