@@ -340,18 +340,23 @@ view: zocial_eye_message {
 
 dimension: gatsby_brand_keyword_label {
 
+
   label: "Gatsby Brand Keyword Label"
   type: string
   sql: CASE
-          WHEN ${zocial_eye_message.text} LIKE ANY ("%Gatsby%hair%men%", "%แกสบี้%ผม%ชาย%", "%แกสต์บี้%ผม%ชาย%") THEN "Brand KWs"
+    WHEN ${zocial_eye_message.text} LIKE ANY ("%Gatsby%", "%แกสบี้%", "%แกสต์บี้%") THEN "Brand KWs"
 
     WHEN ${zocial_eye_message.text} LIKE ANY (
     "%schwarzkopf%",
-    "%ชวาสคอฟ%ผม%ชาย%",
-    "%ชวาสคอป%ผม%ชาย%",
-    "%sevich%hair%men%",
-    "%ซีวิช%ผม%ชาย%",
+    "%ชวาสคอฟ%",
+    "%ชวาสคอป%"
     ) THEN "Competitors KWs"
+
+    WHEN ${zocial_eye_message.text} LIKE ANY (
+    "%sevich%",
+    "%ซีวิช%"
+    ) THEN "Sevich"
+
 
     ELSE NULL
     END ;;
