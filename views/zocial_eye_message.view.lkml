@@ -348,12 +348,14 @@ dimension: gatsby_brand_keyword_label {
 
     WHEN ${zocial_eye_message.text} LIKE ANY (
     "%schwarzkopf%",
+        "%Schwarzkopf%",
     "%ชวาสคอฟ%",
     "%ชวาสคอป%"
     ) THEN "Schwarzkopf"
 
     WHEN ${zocial_eye_message.text} LIKE ANY (
     "%sevich%",
+        "%Sevich%",
     "%ซีวิช%"
     ) THEN "Sevich"
 
@@ -369,6 +371,7 @@ dimension: gatsby_product_keyword_label {
 
                   WHEN ${zocial_eye_message.text} LIKE ANY (
                   "%แป้งเซ็ทผม%",
+                               "%แป้ง%",
                   "%แป้งเซทผม%",
                   "%แป้งยกโคนผม%",
                   "%แป้งเซ็ทโคนผม%",
@@ -390,6 +393,9 @@ dimension: gatsby_product_keyword_label {
     "%wax%เซทผม%",
     "%wax%เซ็ตผม%",
     "%wax%เซ็ทผม%",
+        "%wax%",
+                "%แว๊ก%",
+                                "%แว็ก%",
     "%wax%แต่งผม%"
     ) THEN "wax"
 
@@ -405,6 +411,8 @@ dimension: gatsby_product_keyword_label {
     "%Spray%เซทผม%",
     "%Spray%เซ็ตผม%",
     "%Spray%เซ็ทผม%",
+        "%spray%",
+                "%สเปร%",
     "%Spray%แต่งผม%"
     ) THEN "Spray"
 
@@ -417,6 +425,8 @@ dimension: gatsby_product_keyword_label {
     "%gel%เซ็ตผม%",
     "%gel%เซ็ทผม%",
     "%gel%เซตผม%",
+        "%gel%",
+                "%เจล%",
     "%gel%เซทผม%"
     ) THEN "Gel"
 
@@ -428,6 +438,7 @@ dimension: gatsby_product_keyword_label {
     "%จัดแต่งทรงผม%",
     "%ไอเท็มผู้ชาย%",
     "%ทรงผมผู้ชาย%",
+        "%ทรงผมผู้ชาย%",
     "%ทรงผมทอม%"
     ) THEN "Generic KWs"
 
