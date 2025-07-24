@@ -344,7 +344,10 @@ dimension: gatsby_brand_keyword_label {
   label: "Gatsby Brand Keyword Label"
   type: string
   sql: CASE
-    WHEN ${zocial_eye_message.text} LIKE ANY ("%Gatsby%", "%แกสบี้%", "%แกสต์บี้%") THEN "Gatsby"
+    WHEN ${zocial_eye_message.text} LIKE ANY (
+    "%Gatsby%",
+    "%gatsby%",
+    "%แกสบี้%", "%แกสต์บี้%") THEN "Gatsby"
 
     WHEN ${zocial_eye_message.text} LIKE ANY (
     "%schwarzkopf%",
