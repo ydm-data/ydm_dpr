@@ -449,6 +449,33 @@ dimension: gatsby_product_keyword_label {
     END ;;
 }
 
+  dimension: selsun_blue_keyword_label {
+    label: "Selsun Blue Keyword Label"
+    type: string
+    sql: CASE
+          WHEN ${zocial_eye_message.text} LIKE ANY (
+          "%#HeadandShouldersTH%","%#headandshoulderscoolmenthol%","%#Headร้อนต้องHeadandShoulders%", "%#HeadandShouldersTH%","%#ไม่มีรังแคTheMission%","%#headandshoulderscoolmenthol%"
+          "%#ขจัดรังแคสูงถึง100เปอร์เซ็นต์%", "%#ไม่มีรังแคTheMission%") THEN "HEADANDSHOULDERS"
+
+      WHEN ${zocial_eye_message.text} LIKE ANY (
+      "%#clearthailand%", "%#CLEAR100TheFinalSeason%","%#CLEAR100ใครเกาเสียล้าน%","%#เคลียร์สยบรังแคมั่นใจ100%", "%#clear100xjoongdunk%", "%#clear100xlukkade%"
+      ) THEN "CLEAR"
+
+      WHEN ${zocial_eye_message.text} LIKE ANY (
+      "%VichyDercos%", "%DercosTH%", "%VichyTH%", "%ScalpandHairAcademy%","%meVSdandruff%","%VichyDercosxJamesSu %","%VichyDercosxFirstKhaotung%","%VichyDercosxEarthMix%","%VichyDercosxTayTawan%",
+      "%DensiSolutions%","%DercosDensiSolutions%","%Vichy Dercos%","%#DareToWearBlack%")
+      THEN "VICHY DERCOS"
+
+      WHEN ${zocial_eye_message.text} LIKE ANY (
+      "%switchselsunblue%","%เปลี่ยนมาใช้เซลซั่นบลู%","%จบรังแคซ้ำซากใน2สัปดาห์%","%selsunblue%","%เซลซั่นบลู%","%ฝาแดง%","%แชมพูเซลซั่น%","%selsun%","%เซลซั่นแชมพู%",
+      "%#เปลี่ยนมาใช้เซลซั่นบลู%","%#เห็นผลจริงใน2สัปดาห์%","%#ถ้าเขาทำเจ็บเซลซั่นบลูรับจบ%","%#SelsunblueThailand%","%noคันnoแค%"
+      )
+      THEN "Selsun Blue"
+
+      ELSE NULL
+      END ;;
+  }
+
   dimension: post_comment_fillter {
     type: string
     sql:
