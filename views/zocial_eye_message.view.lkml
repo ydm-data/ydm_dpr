@@ -476,6 +476,34 @@ dimension: gatsby_product_keyword_label {
       END ;;
   }
 
+  dimension: ntg_hydro_boost_keyword_label {
+    label: "NTG Hydro Boost Keyword Label"
+    type: string
+    sql: CASE
+          WHEN ${zocial_eye_message.text} LIKE ANY (
+          "%#skinmoistureburst%","%#สร้างผิวใหม่ใน3วิ%","%#เจลครีมศรีจันทร์%") THEN "Srichand"
+
+      WHEN ${zocial_eye_message.text} LIKE ANY (
+      "%#มอยซ์5Xไลต์%", "%#5xขั้นกว่าของเกราะป้องกันผิว%","%#SKINTIFICขั้นกว่าของเกราะป้องกันผิว%"
+      ) THEN "Skintific"
+
+      WHEN ${zocial_eye_message.text} LIKE ANY (
+      "%#TorridenTH%", "%Torriden%", "%ทอร์ริเดน%")
+      THEN "Torriden"
+
+      WHEN ${zocial_eye_message.text} LIKE ANY (
+      "%#มอยส์เจลฉ่ำบัว%","%#JulaHerb%","%#มอยส์ฉ่ำชนะทุกสถานการณ์%","%มอยส์เจลฉ่ำบัว%","%จุฬาเฮิร์บ%"
+      )
+      THEN "Jula"
+
+      WHEN ${zocial_eye_message.text} LIKE ANY (
+      "%ป้ายยาสกินแคร์%","%tiktokuni%","%ป้ายยาTiktok%","%รีวิวบิวตี้%","%ของดีบอกต่อ%","%ใช้ดีบอกต่อ%", "%tiktokบิวตี้%"      )
+      THEN "Generic"
+
+      ELSE NULL
+      END ;;
+  }
+
   dimension: post_comment_fillter {
     type: string
     sql:
