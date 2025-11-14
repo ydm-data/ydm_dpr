@@ -481,7 +481,7 @@ dimension: gatsby_product_keyword_label {
     type: string
     sql: CASE
           WHEN ${zocial_eye_message.text} LIKE ANY (
-          "%#skinmoistureburst%","%#สร้างผิวใหม่ใน3วิ%","%#เจลครีมศรีจันทร์%") THEN "Srichand"
+          "%#skinmoistureburst%","%#สร้างผิวใหม่ใน3วิ%","%#เจลครีมศรีจันทร์%","%#barrierboostseries%","%เจลครีมกู้ผิว%") THEN "Srichand"
 
       WHEN ${zocial_eye_message.text} LIKE ANY (
       "%#มอยซ์5Xไลต์%", "%#5xขั้นกว่าของเกราะป้องกันผิว%","%#SKINTIFICขั้นกว่าของเกราะป้องกันผิว%"
@@ -492,9 +492,9 @@ dimension: gatsby_product_keyword_label {
       THEN "Torriden"
 
       WHEN ${zocial_eye_message.text} LIKE ANY (
-      "%#มอยส์เจลฉ่ำบัว%","%#มอยส์ฉ่ำชนะทุกสถานการณ์%","%มอยส์เจลฉ่ำบัว%","%Jula's herb water lily ultra boost moisture gel%"
+      "%#มอยส์เจลฉ่ำบัว%","%#มอยส์ฉ่ำชนะทุกสถานการณ์%","%มอยส์เจลฉ่ำบัว%","%jula's herb water lily ultra boost moisture gel%"
       )
-      OR LOWER(${zocial_eye_message.text}) LIKE "%Jula's herb water lily ultra boost moisture gel%"
+      OR LOWER(${zocial_eye_message.text}) LIKE "%jula's herb water lily ultra boost moisture gel%"
       THEN "Jula"
 
       WHEN ${zocial_eye_message.text} LIKE ANY (
