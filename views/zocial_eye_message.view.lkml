@@ -488,12 +488,11 @@ dimension: gatsby_product_keyword_label {
       ) THEN "Skintific"
 
       WHEN ${zocial_eye_message.text} LIKE ANY (
-      "%#TorridenTH%", "%Torriden%", "%ทอร์ริเดน%")
+      "%#TorridenTH%", "%Torriden%", "%ทอร์ริเดน%","Torriden dive in soothing cream")
       THEN "Torriden"
 
       WHEN ${zocial_eye_message.text} LIKE ANY (
-      "%#มอยส์เจลฉ่ำบัว%","%#JulaHerb%","%#มอยส์ฉ่ำชนะทุกสถานการณ์%","%มอยส์เจลฉ่ำบัว%","%จุฬาเฮิร์บ%"
-      )
+      "%#มอยส์เจลฉ่ำบัว%","%#JulaHerb%","%#มอยส์ฉ่ำชนะทุกสถานการณ์%","%มอยส์เจลฉ่ำบัว%","%จุฬาเฮิร์บ%","Jula's herb water lily ultra boost moisture gel")
       THEN "Jula"
 
       WHEN ${zocial_eye_message.text} LIKE ANY (
