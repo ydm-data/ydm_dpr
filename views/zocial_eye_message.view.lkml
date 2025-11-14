@@ -488,7 +488,7 @@ dimension: gatsby_product_keyword_label {
       ) THEN "Skintific"
 
             WHEN LOWER(${zocial_eye_message.text}) LIKE
-      "%Torriden dive in soothing cream%"
+      "%torriden dive in soothing cream%"
       THEN "Torriden"
 
       WHEN ${zocial_eye_message.text} LIKE ANY (
