@@ -487,13 +487,14 @@ dimension: gatsby_product_keyword_label {
       "%#มอยซ์5Xไลต์%", "%#5xขั้นกว่าของเกราะป้องกันผิว%","%#SKINTIFICขั้นกว่าของเกราะป้องกันผิว%"
       ) THEN "Skintific"
 
-      WHEN ${zocial_eye_message.text} LIKE ANY (
-      "%Torriden dive in soothing cream%")
+            WHEN LOWER(${zocial_eye_message.text}) LIKE
+      "%Torriden dive in soothing cream%"
       THEN "Torriden"
 
       WHEN ${zocial_eye_message.text} LIKE ANY (
       "%#มอยส์เจลฉ่ำบัว%","%#มอยส์ฉ่ำชนะทุกสถานการณ์%","%มอยส์เจลฉ่ำบัว%","%Jula's herb water lily ultra boost moisture gel%"
       )
+      OR LOWER(${zocial_eye_message.text}) LIKE "%Jula's herb water lily ultra boost moisture gel%"
       THEN "Jula"
 
       WHEN ${zocial_eye_message.text} LIKE ANY (
