@@ -491,6 +491,10 @@ dimension: gatsby_product_keyword_label {
       "%torriden dive in soothing cream%"
       THEN "Torriden"
 
+ WHEN LOWER(${zocial_eye_message.text}) LIKE
+      "%#barrierboostseries%"
+      THEN "Srichand"
+
       WHEN ${zocial_eye_message.text} LIKE ANY (
       "%#มอยส์เจลฉ่ำบัว%","%#มอยส์ฉ่ำชนะทุกสถานการณ์%","%มอยส์เจลฉ่ำบัว%","%jula's herb water lily ultra boost moisture gel%"
       )
